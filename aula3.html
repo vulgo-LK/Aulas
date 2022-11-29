@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 3 - Calculadora</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Aula 3 - Calculadora</h1>
+
+    <input type="text" id="numero01" placeholder="Digite o primeiro numero">
+    <input type="text" id="numero02" placeholder="Digite o segundo numero">
+
+    <button onclick="soma()">Calcular</button>
+
+    <p>A soma é: <span id="resultado"></span></p>
+</body>
+<script>
+
+    function soma() {
+        let numero01 = Number(document.getElementById("numero01").value);
+        let numero02 = Number(document.getElementById("numero02").value);
+
+        let resultado = numero01 + numero02;
+
+        document.getElementById("resultado").innerHTML = resultado;
+    };
+
+</script>
+</html>

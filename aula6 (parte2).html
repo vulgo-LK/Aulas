@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6 (Parte2) - Comando for e Arrays</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Aula 6 (Parte2) - Comando for e Arrays</h1>
+</body>
+<script>
+    let fiboArray = [];
+
+    let penultimo = 1;
+    let ultimo = 1;
+
+    let soma = penultimo + ultimo;
+    
+    fiboArray.push(penultimo);
+    fiboArray.push(ultimo);
+    fiboArray.push(soma);
+
+    penultimo = ultimo;
+    ultimo = soma;
+    soma = penultimo + ultimo;
+
+    fiboArray.push(soma);
+
+    penultimo = ultimo;
+    ultimo = soma;
+    soma = penultimo + ultimo;
+
+    fiboArray.push(soma);
+
+    console.log(fiboArray);
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 7 - Calculadora de Fibonacci</title>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+    }
+</style>
+<body>
+    <h1 style="text-align: center;">Aula 7 - Calculadora de Fibonacci</h1>
+    <p>Digite quantos elementos você gostaria de ver:</p>
+    <input type="number" max="50" id="textNumberId">
+    <button onclick="fibonacci()">Calcular</button>
+
+    <div id="containerId"></div>
+</body>
+<script>
+    function fibonacci() {
+        let container = document.getElementById("containerId");
+        container.innerHTML = "";
+
+        let numeroElementos = document.getElementById("textNumberId").value;
+
+        let fiboArray = [];
+
+        let penultimo = 1;
+        let ultimo = 1;
+
+        let soma = penultimo + ultimo;
+        
+        fiboArray.push(penultimo);
+        fiboArray.push(ultimo);
+        fiboArray.push(soma);
+
+        for (let i = 2; i < numeroElementos; i++) {
+            penultimo = ultimo;
+            ultimo = soma;
+            soma = penultimo + ultimo;
+
+            fiboArray.push(soma);
+        }
+
+        for (let i = 0; i < fiboArray.length; i++) {
+        container.innerHTML = container.innerHTML + "<span>" + fiboArray[i] + " </span>"
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 7 (Parte3) - Criando Arrays de Objetos</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Aula 7 (Parte3) - Criando Arrays de Objetos</h1>
+    <p>Pessoas com +18 anos:</p>
+    <div id="pessoas+18Id"></div>
+    <br>
+    <p>Pessoas com -18 anos:</p>
+    <div id="pessoas-18Id"></div>
+</body>
+<script>
+    let maioresIdade = document.getElementById("pessoas+18Id");
+    let menoresIdade = document.getElementById("pessoas-18Id");
+
+    let pessoas = [
+        {
+            nome: "José Silva",
+            idade: 43,
+            cidade: "São Paulo"
+        },
+        {
+            nome: "Maria Souza",
+            idade: 52,
+            cidade: "Rio de Janeiro"
+        },
+        {
+            nome: "João Oliveira",
+            idade: 12,
+            cidade: "Belo Horizonte"
+        }
+    ];
+
+    for (let i = 0; i < pessoas.length; i++) {
+        if(pessoas[i].idade > 18) {
+            console.log(pessoas[i].nome)
+            maioresIdade.innerHTML = maioresIdade.innerHTML + "<span>" + pessoas[i].nome + ", <br></span>"
+        }
+    }
+
+    for (let i = 0; i < pessoas.length; i++) {
+        if(pessoas[i].idade < 18) {
+            console.log(pessoas[i].nome)
+            menoresIdade.innerHTML = menoresIdade.innerHTML + "<span>" + pessoas[i].nome + ", <br></span>"
+        }
+    }
+</script>
+</html>

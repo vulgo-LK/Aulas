@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passagem de parâmetros</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Aula 8 - Passagem de parâmetros</h1>
+    <input type="text" id="primeiroNumeroId">
+    <input type="text" id="segundoNumeroId">
+    <button onclick="calcular('somar')">Somar</button>
+    <button onclick="calcular('multiplicar')">Multiplicar</button>
+    <p>O resultado é: <span id="resultadoId"></span></p>
+</body>
+<script>
+    function calcular(operacao) {
+        if (operacao === "somar") {
+            resultadoId.innerHTML = Number(primeiroNumeroId.value) + Number(segundoNumeroId.value);
+        }
+
+        if (operacao === "multiplicar") {
+            resultadoId.innerHTML = Number(primeiroNumeroId.value) * Number(segundoNumeroId.value);
+        }
+    }
+</script>
+</html>

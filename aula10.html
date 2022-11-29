@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10 - Arrays de Objetos e Passagem de parâmetros</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Aula 10 - Arrays de Objetos e Passagem de parâmetros</h1>
+    <p>
+        No seu script, você tem um array de objetos que armazenam nome e senha de vários usuários.
+    </p>
+
+    <p>Experimentos:</p>
+    <ul>
+        <li>Mostrar os nomes dos usuários na tela</li>
+        <div id="containerId"></div>
+        <br>
+        <li>Quando o usuario digitar nome e senha, mostrar na tela "acesso negado" ou "bem vindo"</li>
+        <input type="text" id="loginId">
+        <input type="text" id="senhaId">
+        <button onclick="login()">Entrar</button>
+        <p>Busca pelo usuário: <span id="resultadoId">Acesso negado</span></p>
+    </ul>
+</body>
+<script>
+    let usuarios = [
+        {
+            nome: "José Silva",
+            senha: 1234
+        },
+        {
+            nome: "Maria Souza",
+            senha: 5678
+        },
+        {
+            nome: "Joana Oliveira",
+            senha: 9012
+        },
+    ];
+
+    for (let i = 0; i < usuarios.length; i++) {
+        containerId.innerHTML = containerId.innerHTML + "<span>" + usuarios[i].nome + ", </span><br>";
+    }
+
+    function usuarioExiste(nomeBusca) {
+        let encontrou = false;
+
+        for (let i = 0; i < usuarios.length; i++) {
+            if(usuarios[i].nome === nomeBusca) {
+                encontrou = true;
+                break;
+            };
+        }
+
+        return encontrou;
+    }
+
+    function senhaCorreta(senha) {
+        console.log(senha);
+        let loginInput = document.getElementById("loginId").value;
+
+        for (let i = 0; i < usuarios.length; i++) {
+            console.log(usuarios[i].nome === loginInput);
+        }
+
+        return true;
+    }
+
+    function login() {
+        let login = document.getElementById("loginId").value;
+        let senha = document.getElementById("senhaId").value;
+
+
+        let resultadoLogin = usuarioExiste(login);
+        let resultadoSenha = senhaCorreta(senha);
+
+        if(resultadoLogin && resultadoSenha) {
+            document.getElementById("resultadoId").innerHTML = "Seja bem-vindo(a)";
+        } else {
+            document.getElementById("resultadoId").innerHTML = "Acesso negado";
+        }
+    }
+    
+</script>
+</html>

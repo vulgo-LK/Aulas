@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6 - Comando for e Arrays</title>
+
+    <style>
+        body {
+            width: 60%;
+            margin: auto;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Aula 6 - Comando for e Arrays</h1>
+
+    <p>Criando e exibindo um array com os 50 primeiros numeros naturais</p>
+
+    <div id="containerID"></div>
+</body>
+<script>
+    let numeros = [];
+    let container = document.getElementById("containerID");
+
+    for (let i = 1; i < 51; i++) {
+        numeros.push(i);
+    }
+
+    for (let i = 0; i < numeros.length; i++) {
+    container.innerHTML = container.innerHTML + "<span>" + numeros[i] + " </span>"
+    }
+</script>
+</html>

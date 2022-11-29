@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5 - Experimentos HTML/JS</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Aula 5 - Calculadora Completa</h1>
+    <input type="number" id="inputID_01">
+    <input type="number" id="inputID_02">
+
+    <p>Resultado: <span id="spanID"></span></p>
+    <button onclick="soma()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+</body>
+<script>
+    function soma() {
+        spanID.innerHTML = Number(inputID_01.value) + Number(inputID_02.value)
+    }
+
+    function subtrair() {
+        spanID.innerHTML = Number(inputID_01.value) - Number(inputID_02.value)
+    }
+
+    function dividir() {
+        spanID.innerHTML = Number(inputID_01.value) / Number(inputID_02.value)
+    }
+
+    function multiplicar() {
+        spanID.innerHTML = Number(inputID_01.value) * Number(inputID_02.value)
+    }
+</script>
+</html>

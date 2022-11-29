@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4 - Funções</title>
+    <style>
+        img {
+            height: 30rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Aula 4 - Funções</h1>
+    <img id="bandeira" src="img/imagem1.gif" alt="">
+    <div>
+        <button onclick="voltaImagem()">Anteriror</button>
+        <button onclick="avancaImagem()">Próxima</button>
+    </div>
+</body>
+<script>
+    let bandeiras = [
+        "img/imagem1.gif", 
+        "img/imagem2.gif", 
+        "img/imagem3.gif"
+    ];
+    let indice = 0;
+
+    function avancaImagem() {
+        indice++;
+        if (indice === 3) {
+            indice = 0;
+        }
+        document.getElementById("bandeira").src = bandeiras[indice];
+    }
+
+    function voltaImagem() {
+        indice--;
+        if (indice === -1) {
+            indice = 2;
+        }
+        document.getElementById("bandeira").src = bandeiras[indice];
+    }
+</script>
+</html>
